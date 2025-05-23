@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio Créatif</title>
+    <title>Моё Креативное Портфолио</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Animation personnalisée */
+         /*Пользовательская анимация*/
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -17,7 +17,7 @@
             animation: fadeIn 1s ease-out forwards;
         }
         
-        /* Effet de survol personnalisé pour les cartes de projet */
+        /*Эффект наведения для карточек проектов*/
         .project-card {
             transition: all 0.3s ease;
         }
@@ -27,7 +27,7 @@
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         
-        /* Style personnalisé pour la barre de navigation */
+        /*Пользовательский стиль для навигации*/
         .nav-link {
             position: relative;
         }
@@ -47,7 +47,7 @@
             width: 100%;
         }
         
-        /* Animation pour le bouton de contact */
+        /*Анимация для кнопки контактов*/
         .contact-btn {
             transition: all 0.3s ease;
         }
@@ -59,19 +59,19 @@
     </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800">
-    <!-- Barre de navigation -->
+    <!--Навигационная панель-->
     <nav class="fixed w-full bg-white shadow-sm z-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <a href="#" class="text-xl font-bold text-blue-500">Portfolio</a>
+                    <a href="#" class="text-xl font-bold text-blue-500">Портфолио</a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#accueil" class="nav-link text-gray-700 hover:text-blue-500">Accueil</a>
-                    <a href="#projets" class="nav-link text-gray-700 hover:text-blue-500">Projets</a>
-                    <a href="#competences" class="nav-link text-gray-700 hover:text-blue-500">Compétences</a>
-                    <a href="#a-propos" class="nav-link text-gray-700 hover:text-blue-500">À propos</a>
-                    <a href="#contact" class="contact-btn bg-blue-500 text-white px-4 py-2 rounded-md">Contact</a>
+                    <a href="#accueil" class="nav-link text-gray-700 hover:text-blue-500">Главная</a>
+                    <a href="#projets" class="nav-link text-gray-700 hover:text-blue-500">Проекты</a>
+                    <a href="#competences" class="nav-link text-gray-700 hover:text-blue-500">Навыки</a>
+                    <a href="#a-propos" class="nav-link text-gray-700 hover:text-blue-500">Обо&nbsp;мне</a>
+                    <a href="#contact" class="contact-btn bg-blue-500 text-white px-4 py-2 rounded-md">Контакты</a>
                 </div>
                 <div class="md:hidden flex items-center">
                     <button id="menu-btn" class="text-gray-700">
@@ -81,37 +81,37 @@
             </div>
         </div>
         
-        <!-- Menu mobile -->
+        <!--Мобильное меню-->
         <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#accueil" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Accueil</a>
-                <a href="#projets" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Projets</a>
-                <a href="#competences" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Compétences</a>
-                <a href="#a-propos" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">À propos</a>
-                <a href="#contact" class="block px-3 py-2 bg-blue-500 text-white rounded-md">Contact</a>
+                <a href="#accueil" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Главная</a>
+                <a href="#projets" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Проекты</a>
+                <a href="#competences" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Навыки</a>
+                <a href="#a-propos" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Обо&nbsp;мне</a>
+                <a href="#contact" class="block px-3 py-2 bg-blue-500 text-white rounded-md">Контакты</a>
             </div>
         </div>
     </nav>
 
-    <!-- Section Hero -->
+    <!--Hero-->
     <section id="accueil" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-r from-blue-50 to-indigo-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 animate-fadeIn">
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Bonjour, je suis <span class="text-blue-500">Alex</span></h1>
-                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-600 mb-6">Développeur Web Créatif</h2>
-                    <p class="text-gray-600 mb-8 text-lg">Je crée des expériences numériques exceptionnelles avec un design moderne et des solutions techniques innovantes.</p>
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Привет, я <span class="text-blue-500">Кирилл</span></h1>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-600 mb-6">Специалист по безопасной разработке (Application Security)</h2>
+                    <p class="text-gray-600 mb-8 text-lg">Помогаю командам внедрять практики Secure SDLC, проводить аудит кода и автоматизировать безопасность приложений.</p>
                     <div class="flex space-x-4">
-                        <a href="#projets" class="contact-btn bg-blue-500 text-white px-6 py-3 rounded-md">Voir mes projets</a>
-                        <a href="#contact" class="contact-btn border border-blue-500 text-blue-500 px-6 py-3 rounded-md">Me contacter</a>
+                        <a href="#projets" class="contact-btn bg-blue-500 text-white px-6 py-3 rounded-md">Смотреть проекты</a>
+                        <a href="#contact" class="contact-btn border border-blue-500 text-blue-500 px-6 py-3 rounded-md">Связаться со мной</a>
                     </div>
                 </div>
                 <div class="md:w-1/2 flex justify-center animate-fadeIn" style="animation-delay: 0.3s;">
                     <div class="relative">
                         <div class="w-64 h-64 md:w-80 md:h-80 bg-blue-500 rounded-full opacity-10 absolute -top-6 -left-6"></div>
                         <div class="w-64 h-64 md:w-80 md:h-80 bg-indigo-500 rounded-full opacity-10 absolute -bottom-6 -right-6"></div>
-                        <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" 
-                             alt="Photo de profil" 
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwU4KEonYKErwZvFKaBXciXdL9c9h4bKBmsw&s&auto=format&fit=crop&w=880&q=80" 
+                             alt="Фото профиля" 
                              class="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-white shadow-xl">
                     </div>
                 </div>
@@ -119,91 +119,91 @@
         </div>
     </section>
 
-    <!-- Section Projets -->
+    <!--Проекты-->
     <section id="projets" class="py-16 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Mes Projets Récents</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Découvrez une sélection de mes réalisations les plus marquantes, alliant design et fonctionnalité.</p>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Мои последние проекты</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Откройте для себя подборку моих самых ярких работ, сочетающих дизайн и функциональность.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Projet 1 -->
+                <!--Проект 1-->
                 <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn" style="animation-delay: 0.1s;">
                     <div class="h-48 bg-gradient-to-r from-blue-400 to-indigo-500 flex items-center justify-center">
                         <i class="fas fa-laptop-code text-white text-6xl"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Application Web E-commerce</h3>
-                        <p class="text-gray-600 mb-4">Plateforme complète avec paiement en ligne, gestion de stock et interface admin.</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">E‑commerce Web‑приложение</h3>
+                        <p class="text-gray-600 mb-4">Полноценная платформа с онлайн‑оплатой, управлением запасами и админ‑панелью.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">React</span>
                             <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Node.js</span>
                             <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">MongoDB</span>
                         </div>
-                        <a href="#" class="text-blue-500 font-medium hover:text-blue-700">Voir le projet →</a>
+                        <a href="#" class="text-blue-500 font-medium hover:text-blue-700">Смотреть проект →</a>
                     </div>
                 </div>
                 
-                <!-- Projet 2 -->
+                <!--Проект 2-->
                 <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn" style="animation-delay: 0.2s;">
                     <div class="h-48 bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center">
                         <i class="fas fa-mobile-alt text-white text-6xl"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Application Mobile de Fitness</h3>
-                        <p class="text-gray-600 mb-4">Suivi d'activité, programmes personnalisés et intégration avec wearables.</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Мобильное фитнес‑приложение</h3>
+                        <p class="text-gray-600 mb-4">Отслеживание активности, персональные программы и интеграция с wearables.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Flutter</span>
                             <span class="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full">Firebase</span>
                             <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">API REST</span>
                         </div>
-                        <a href="#" class="text-blue-500 font-medium hover:text-blue-700">Voir le projet →</a>
+                        <a href="#" class="text-blue-500 font-medium hover:text-blue-700">Смотреть проект →</a>
                     </div>
                 </div>
                 
-                <!-- Projet 3 -->
+                <!--Проект 3-->
                 <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn" style="animation-delay: 0.3s;">
                     <div class="h-48 bg-gradient-to-r from-green-400 to-teal-500 flex items-center justify-center">
                         <i class="fas fa-chart-line text-white text-6xl"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Tableau de Bord Analytique</h3>
-                        <p class="text-gray-600 mb-4">Visualisation de données en temps réel avec filtres avancés et export PDF.</p>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Аналитическая панель</h3>
+                        <p class="text-gray-600 mb-4">Визуализация данных в реальном времени с расширенными фильтрами и экспортом в PDF.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Vue.js</span>
                             <span class="bg-teal-100 text-teal-800 text-xs px-3 py-1 rounded-full">D3.js</span>
                             <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Python</span>
                         </div>
-                        <a href="#" class="text-blue-500 font-medium hover:text-blue-700">Voir le projet →</a>
+                        <a href="#" class="text-blue-500 font-medium hover:text-blue-700">Смотреть проект →</a>
                     </div>
                 </div>
             </div>
             
             <div class="text-center mt-12 animate-fadeIn" style="animation-delay: 0.4s;">
                 <a href="#" class="inline-block contact-btn bg-gray-800 text-white px-6 py-3 rounded-md hover:bg-gray-700">
-                    Voir tous les projets <i class="fas fa-arrow-right ml-2"></i>
+                    Смотреть все проекты <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Section Compétences -->
+    <!--Навыки-->
     <section id="competences" class="py-16 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Mes Compétences</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Un ensemble diversifié de compétences techniques et créatives pour répondre à tous vos besoins numériques.</p>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Мои навыки</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Разнообразный набор технических и креативных умений для любых ваших цифровых задач.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Compétence 1 -->
+                <!--Навык 1-->
                 <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 animate-fadeIn" style="animation-delay: 0.1s;">
                     <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-code text-blue-500 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Développement Frontend</h3>
-                    <p class="text-gray-600 mb-4">Création d'interfaces utilisateur réactives et accessibles avec les dernières technologies web.</p>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Frontend‑разработка</h3>
+                    <p class="text-gray-600 mb-4">Создание отзывчивых и доступных интерфейсов с использованием современных веб‑технологий.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">HTML5</span>
                         <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">CSS3</span>
@@ -213,13 +213,13 @@
                     </div>
                 </div>
                 
-                <!-- Compétence 2 -->
+                <!--Навык 2-->
                 <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 animate-fadeIn" style="animation-delay: 0.2s;">
                     <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-server text-indigo-500 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Développement Backend</h3>
-                    <p class="text-gray-600 mb-4">Construction d'API robustes et sécurisées pour alimenter vos applications.</p>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Backend‑разработка</h3>
+                    <p class="text-gray-600 mb-4">Создание надёжных и безопасных API для ваших приложений.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Node.js</span>
                         <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full">Express</span>
@@ -229,13 +229,13 @@
                     </div>
                 </div>
                 
-                <!-- Compétence 3 -->
+                <!--Навык 3-->
                 <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 animate-fadeIn" style="animation-delay: 0.3s;">
                     <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
                         <i class="fas fa-paint-brush text-purple-500 text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Design UI/UX</h3>
-                    <p class="text-gray-600 mb-4">Conception d'expériences utilisateur intuitives et esthétiques pour maximiser l'engagement.</p>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-3">UI/UX‑дизайн</h3>
+                    <p class="text-gray-600 mb-4">Проектирование интуитивно понятных и привлекательных пользовательских впечатлений для максимального вовлечения.</p>
                     <div class="flex flex-wrap gap-2">
                         <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Figma</span>
                         <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Adobe XD</span>
@@ -245,9 +245,9 @@
                 </div>
             </div>
             
-            <!-- Graphique de compétences -->
+            <!--График навыков-->
             <div class="mt-16 bg-white p-8 rounded-lg shadow-sm animate-fadeIn" style="animation-delay: 0.4s;">
-                <h3 class="text-xl font-semibold text-gray-800 mb-6">Maîtrise des Technologies</h3>
+                <h3 class="text-xl font-semibold text-gray-800 mb-6">Владение технологиями</h3>
                 <div class="space-y-6">
                     <div>
                         <div class="flex justify-between mb-1">
@@ -293,13 +293,13 @@
         </div>
     </section>
 
-    <!-- Section À propos -->
+    <!--Обо мне-->
     <section id="a-propos" class="py-16 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-10 md:mb-0 animate-fadeIn">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-6">À propos de moi</h2>
-                    <p class="text-gray-600 mb-6">Passionné par la technologie depuis mon plus jeune âge, j'ai transformé cette passion en une carrière enrichissante dans le développement web et mobile.</p>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Обо мне</h2>
+                    <p class="text-gray-600 mb-6">С детства увлечён технологиями и превратил эту страсть в насыщенную карьеру в области веб‑ и мобильной разработки.</p>
                     
                     <div class="space-y-4 mb-8">
                         <div class="flex items-start">
@@ -309,7 +309,7 @@
                                 </div>
                             </div>
                             <div class="ml-3">
-                                <p class="text-gray-700">Plus de 5 ans d'expérience dans le développement web</p>
+                                <p class="text-gray-700">Более 5 лет опыта в веб‑разработке</p>
                             </div>
                         </div>
                         
@@ -320,7 +320,7 @@
                                 </div>
                             </div>
                             <div class="ml-3">
-                                <p class="text-gray-700">Diplômé en Informatique de l'Université de Paris</p>
+                                <p class="text-gray-700">Диплом Informatique, Университет Парижа</p>
                             </div>
                         </div>
                         
@@ -331,22 +331,22 @@
                                 </div>
                             </div>
                             <div class="ml-3">
-                                <p class="text-gray-700">Plus de 20 projets réalisés pour des clients variés</p>
+                                <p class="text-gray-700">Более 20 завершённых проектов для разных клиентов</p>
                             </div>
                         </div>
                     </div>
                     
                     <a href="#" class="contact-btn inline-flex items-center bg-blue-500 text-white px-6 py-3 rounded-md">
-                        <i class="fas fa-download mr-2"></i> Télécharger mon CV
+                        <i class="fas fa-download mr-2"></i> Скачать моё резюме
                     </a>
                 </div>
                 
                 <div class="md:w-1/2 md:pl-12 animate-fadeIn" style="animation-delay: 0.3s;">
                     <div class="bg-gray-50 p-8 rounded-lg">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Mon Parcours</h3>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Мой путь</h3>
                         
                         <div class="space-y-8">
-                            <!-- Expérience 1 -->
+                            <!-- Опыт 1 -->
                             <div class="flex">
                                 <div class="flex-shrink-0 mr-4">
                                     <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
@@ -354,13 +354,13 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-800">Développeur Frontend Senior</h4>
-                                    <p class="text-sm text-gray-500 mb-1">TechSolutions Inc. • 2020 - Présent</p>
-                                    <p class="text-gray-600">Responsable de la conception et de l'implémentation des interfaces utilisateur pour les applications web de l'entreprise.</p>
+                                    <h4 class="font-medium text-gray-800">Senior Frontend‑разработчик</h4>
+                                    <p class="text-sm text-gray-500 mb-1">TechSolutions Inc. • 2020 – настоящее время</p>
+                                    <p class="text-gray-600">Отвечаю за дизайн и реализацию пользовательских интерфейсов веб‑приложений компании.</p>
                                 </div>
                             </div>
                             
-                            <!-- Expérience 2 -->
+                            <!--Опыт 2-->
                             <div class="flex">
                                 <div class="flex-shrink-0 mr-4">
                                     <div class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
@@ -368,13 +368,13 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-800">Développeur Full Stack</h4>
-                                    <p class="text-sm text-gray-500 mb-1">WebCraft Studio • 2017 - 2020</p>
-                                    <p class="text-gray-600">Développement d'applications web complètes, de la base de données à l'interface utilisateur.</p>
+                                    <h4 class="font-medium text-gray-800">Full‑stack разработчик</h4>
+                                    <p class="text-sm text-gray-500 mb-1">WebCraft Studio • 2017 – 2020</p>
+                                    <p class="text-gray-600">Разработка комплексных веб‑приложений, от базы данных до интерфейса.</p>
                                 </div>
                             </div>
                             
-                            <!-- Expérience 3 -->
+                            <!-- Опыт 3 -->
                             <div class="flex">
                                 <div class="flex-shrink-0 mr-4">
                                     <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
@@ -382,9 +382,9 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-800">Stagiaire en Développement</h4>
-                                    <p class="text-sm text-gray-500 mb-1">Digital Innovations • Été 2016</p>
-                                    <p class="text-gray-600">Première expérience professionnelle dans le développement web et mobile.</p>
+                                    <h4 class="font-medium text-gray-800">Стажёр‑разработчик</h4>
+                                    <p class="text-sm text-gray-500 mb-1">Digital Innovations • лето 2016</p>
+                                    <p class="text-gray-600">Первый профессиональный опыт в веб‑ и мобильной разработке.</p>
                                 </div>
                             </div>
                         </div>
@@ -394,191 +394,12 @@
         </div>
     </section>
 
-    <!-- Section Contact -->
+    <!--Контакты-->
     <section id="contact" class="py-16 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Contactez-moi</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Vous avez un projet en tête ou souhaitez discuter d'une opportunité ? Je serais ravi d'échanger avec vous.</p>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Свяжитесь со мной</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Есть идея проекта или хотите обсудить возможность сотрудничества? Буду рад пообщаться.</p>
             </div>
             
             <div class="flex flex-col md:flex-row">
-                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8 animate-fadeIn">
-                    <div class="bg-white p-8 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Informations de contact</h3>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1">
-                                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-envelope text-blue-500"></i>
-                                    </div>
-                                </div>
-                                <div class="ml-4">
-                                    <h4 class="text-sm font-medium text-gray-500">Email</h4>
-                                    <p class="text-gray-700">contact@monportfolio.com</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1">
-                                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-phone-alt text-blue-500"></i>
-                                    </div>
-                                </div>
-                                <div class="ml-4">
-                                    <h4 class="text-sm font-medium text-gray-500">Téléphone</h4>
-                                    <p class="text-gray-700">+33 6 12 34 56 78</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="flex-shrink-0 mt-1">
-                                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                                        <i class="fas fa-map-marker-alt text-blue-500"></i>
-                                    </div>
-                                </div>
-                                <div class="ml-4">
-                                    <h4 class="text-sm font-medium text-gray-500">Adresse</h4>
-                                    <p class="text-gray-700">123 Rue du Développeur, 75000 Paris, France</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-8">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-6">Réseaux sociaux</h3>
-                            <div class="flex space-x-4">
-                                <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-500 hover:bg-blue-500 hover:text-white transition-colors duration-300">
-                                    <i class="fab fa-linkedin-in"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-500 hover:bg-blue-500 hover:text-white transition-colors duration-300">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-500 hover:bg-blue-500 hover:text-white transition-colors duration-300">
-                                    <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-500 hover:bg-blue-500 hover:text-white transition-colors duration-300">
-                                    <i class="fab fa-dribbble"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="md:w-1/2 animate-fadeIn" style="animation-delay: 0.3s;">
-                    <div class="bg-white p-8 rounded-lg shadow-sm">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-6">Envoyez-moi un message</h3>
-                        
-                        <form>
-                            <div class="mb-6">
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nom complet</label>
-                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Votre nom">
-                            </div>
-                            
-                            <div class="mb-6">
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Adresse email</label>
-                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="votre@email.com">
-                            </div>
-                            
-                            <div class="mb-6">
-                                <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Sujet</label>
-                                <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Objet de votre message">
-                            </div>
-                            
-                            <div class="mb-6">
-                                <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
-                                <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="Décrivez votre projet ou votre demande"></textarea>
-                            </div>
-                            
-                            <button type="submit" class="contact-btn w-full bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600">
-                                Envoyer le message <i class="fas fa-paper-plane ml-2"></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <a href="#" class="text-xl font-bold">Portfolio</a>
-                    <p class="text-gray-400 mt-2">© 2023 Mon Portfolio. Tous droits réservés.</p>
-                </div>
-                
-                <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-                        <i class="fab fa-dribbble"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Menu mobile
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Animation au défilement
-        document.addEventListener('DOMContentLoaded', () => {
-            const animateElements = document.querySelectorAll('.animate-fadeIn');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-            
-            animateElements.forEach(element => {
-                element.style.opacity = 0;
-                element.style.transform = 'translateY(20px)';
-                element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(element);
-            });
-            
-            // Smooth scrolling pour les liens
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                        
-                        // Fermer le menu mobile si ouvert
-                        mobileMenu.classList.add('hidden');
-                    }
-                });
-            });
-        });
-    </script>
-<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - <a href="https://enzostvs-deepsite.hf.space?remix=Adama99/adauu" style="color: #fff;text-decoration: underline;" target="_blank" >🧬 Remix</a></p></body>
-</html>
