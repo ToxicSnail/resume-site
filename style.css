@@ -1,28 +1,47 @@
-body {
-	padding: 2rem;
-	font-family: -apple-system, BlinkMacSystemFont, "Arial", sans-serif;
+/* ----------  базовая палитра через переменные  ---------- */
+:root {
+  /* светлая тема */
+  --bg:           #ffffff;
+  --text-main:    #1f2937; /* gray-800 */
+  --text-muted:   #6b7280; /* gray-500 */
+  --card-bg:      #ffffff;
+  --card-border:  #d1d5db; /* gray-300 */
 }
 
-h1 {
-	font-size: 16px;
-	margin-top: 0;
+html.dark {
+  /* тёмная тема */
+  --bg:           #1f2937; /* gray-800 */
+  --text-main:    #f9fafb; /* gray-50  */
+  --text-muted:   #d1d5db; /* gray-300 */
+  --card-bg:      #111827; /* gray-900 */
+  --card-border:  #374151; /* gray-700 */
 }
+
+/* ----------  применяем переменные  ---------- */
+body {
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Arial", sans-serif;
+  background: var(--bg);
+  color: var(--text-main);
+  transition: background .3s, color .3s;
+}
+
+h1 { font-size: 16px; margin-top: 0; }
 
 p {
-	color: rgb(107, 114, 128);
-	font-size: 15px;
-	margin-bottom: 10px;
-	margin-top: 5px;
+  color: var(--text-muted);
+  font-size: 15px;
+  margin: 5px 0 10px;
 }
 
 .card {
-	max-width: 620px;
-	margin: 0 auto;
-	padding: 16px;
-	border: 1px solid lightgray;
-	border-radius: 16px;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  transition: background .3s, border-color .3s;
 }
 
-.card p:last-child {
-	margin-bottom: 0;
-}
+.card p:last-child { margin-bottom: 0; }

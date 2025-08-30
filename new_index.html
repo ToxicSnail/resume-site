@@ -1,238 +1,287 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио: Application Security Engineer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Пользовательская анимация */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fadeIn { animation: fadeIn 1s ease-out forwards; }
-        /* Эффекты */
-        .project-card { transition: all 0.3s ease; }
-        .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04); }
-        .nav-link { position: relative; }
-        .nav-link::after { content:""; position:absolute; width:0; height:2px; bottom:0; left:0; background:#3B82F6; transition:width 0.3s ease; }
-        .nav-link:hover::after { width:100%; }
-        .contact-btn { transition: all 0.3s ease; }
-        .contact-btn:hover { transform: scale(1.05); box-shadow: 0 10px 15px -3px rgba(59,130,246,0.3); }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Application Security Engineer</title>
+
+  <!-- Tailwind CDN + dark‑mode via class -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
-<body class="bg-gray-50 font-sans text-gray-800">
-    <!-- Навигация -->
-    <nav class="fixed w-full bg-white shadow-sm z-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="#" class="text-xl font-bold text-blue-500">Портфолио</a>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#accueil" class="nav-link text-gray-700 hover:text-blue-500">Главная</a>
-                    <a href="#projets" class="nav-link text-gray-700 hover:text-blue-500">Проекты</a>
-                    <a href="#competences" class="nav-link text-gray-700 hover:text-blue-500">Навыки</a>
-                    <a href="#a-propos" class="nav-link text-gray-700 hover:text-blue-500">Обо&nbsp;мне</a>
-                    <a href="#contact" class="contact-btn bg-blue-500 text-white px-4 py-2 rounded-md">Контакты</a>
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button id="menu-btn" class="text-gray-700"><i class="fas fa-bars text-xl"></i></button>
-                </div>
-            </div>
-        </div>
-        <!-- Мобильное меню -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#accueil" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Главная</a>
-                <a href="#projets" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Проекты</a>
-                <a href="#competences" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Навыки</a>
-                <a href="#a-propos" class="block px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-md">Обо&nbsp;мне</a>
-                <a href="#contact" class="block px-3 py-2 bg-blue-500 text-white rounded-md">Контакты</a>
-            </div>
-        </div>
-    </nav>
+<body class="bg-gray-50 dark:bg-gray-900 font-sans text-gray-800 dark:text-gray-100">
+<!-- ───── NAVBAR ───── -->
+<nav class="fixed w-full bg-white dark:bg-gray-800 shadow-sm z-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <a href="#" class="text-xl font-bold text-blue-500">Portfolio</a>
 
-    <!-- Hero -->
-    <section id="accueil" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-r from-blue-50 to-indigo-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0 animate-fadeIn">
-                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Привет, я <span class="text-blue-500">Alex</span></h1>
-                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-600 mb-6">Специалист по безопасной разработке (Application Security)</h2>
-                    <p class="text-gray-600 mb-8 text-lg">Помогаю командам внедрять практики Secure SDLC, проводить аудит кода и автоматизировать безопасность приложений.</p>
-                    <div class="flex space-x-4">
-                        <a href="#projets" class="contact-btn bg-blue-500 text-white px-6 py-3 rounded-md">Смотреть проекты</a>
-                        <a href="#contact" class="contact-btn border border-blue-500 text-blue-500 px-6 py-3 rounded-md">Связаться со мной</a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex justify-center animate-fadeIn" style="animation-delay:0.3s;">
-                    <div class="relative">
-                        <div class="w-64 h-64 md:w-80 md:h-80 bg-blue-500 rounded-full opacity-10 absolute -top-6 -left-6"></div>
-                        <div class="w-64 h-64 md:w-80 md:h-80 bg-indigo-500 rounded-full opacity-10 absolute -bottom-6 -right-6"></div>
-                        <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=880&q=80" alt="Фото профиля" class="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-white shadow-xl">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="hidden md:flex items-center flex-1 justify-center space-x-8">
+        <a href="#accueil"     class="nav-link text-gray-700 dark:text-gray-200">Main</a>
+        <a href="#projets"     class="nav-link text-gray-700 dark:text-gray-200">Projects</a>
+        <a href="#competences" class="nav-link text-gray-700 dark:text-gray-200">Skills</a>
+        <a href="#a-propos"    class="nav-link text-gray-700 dark:text-gray-200">About&nbsp;me</a>
+        <a href="#contact" class="contact-btn bg-blue-500 text-white px-4 py-2 rounded-md">Contacts</a>
+      </div>
 
-    <!-- Проекты (примерные пентесты/демо) -->
-    <section id="projets" class="py-16 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Недавние инициативы</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Примеры работ: интеграция SAST/DAST, разработка безопасных модулей и внутренняя автоматизация.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Проект: Secure CI/CD -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn" style="animation-delay:0.1s;">
-                    <div class="h-48 bg-gradient-to-r from-green-400 to-teal-500 flex items-center justify-center"><i class="fas fa-shield-alt text-white text-6xl"></i></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Secure CI/CD Pipeline</h3>
-                        <p class="text-gray-600 mb-4">Автоматизация SAST, DAST и контейнер‑сканирования в GitHub Actions.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">GitHub&nbsp;Actions</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">OWASP&nbsp;Dependency‑Check</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Snyk</span>
-                        </div>
-                        <a href="#" class="text-blue-500 font-medium hover:text-blue-700">Подробнее →</a>
-                    </div>
-                </div>
-                <!-- Проект: Threat Modeling Tool -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn" style="animation-delay:0.2s;">
-                    <div class="h-48 bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center"><i class="fas fa-project-diagram text-white text-6xl"></i></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Interactive Threat‑Modeling Tool</h3>
-                        <p class="text-gray-600 mb-4">Веб‑приложение для коллаборативного STRIDE‑моделирования угроз.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">TypeScript</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">React</span>
-                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">D3.js</span>
-                        </div>
-                        <a href="#" class="text-blue-500 font-medium hover:text-blue-700">Подробнее →</a>
-                    </div>
-                </div>
-                <!-- Проект: Secure Coding Workshop -->
-                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md animate-fadeIn" style="animation-delay:0.3s;">
-                    <div class="h-48 bg-gradient-to-r from-blue-400 to-indigo-500 flex items-center justify-center"><i class="fas fa-chalkboard-teacher text-white text-6xl"></i></div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Secure Coding Workshop</h3>
-                        <p class="text-gray-600 mb-4">Обучающий курс для разработчиков по предотвращению OWASP Top‑10.</p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Java</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Python</span>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">C/C++</span>
-                        </div>
-                        <a href="#" class="text-blue-500 font-medium hover:text-blue-700">Подробнее →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="hidden md:flex items-center space-x-4 ml-8 pl-8 border-l border-gray-300 dark:border-gray-600">
+        <a id="lang-switch" href="ru_index.html" class="text-gray-700 dark:text-gray-200 hover:text-blue-500">RU</a>
+        <button id="theme-toggle" aria-label="Toggle theme">
+             <i class="fas fa-moon"></i>
+        </button>
+      </div>
 
-    <!-- Навыки -->
-    <section id="competences" class="py-16 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4">Ключевые навыки</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Технические компетенции и методы, которые я применяю для защиты приложений на всех этапах разработки.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Secure Development -->
-                <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 animate-fadeIn" style="animation-delay:0.1s;">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6"><i class="fas fa-lock text-blue-500 text-2xl"></i></div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Secure Coding & SDLC</h3>
-                    <p class="text-gray-600 mb-4">Интеграция безопасности в цикл разработки, code‑review и управление уязвимостями.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag">Java</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">C/C++</span>
-                        <span class="tag">TypeScript</span>
-                        <span class="tag">JavaScript</span>
-                    </div>
-                </div>
-                <!-- AppSec Tooling -->
-                <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 animate-fadeIn" style="animation-delay:0.2s;">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6"><i class="fas fa-tools text-indigo-500 text-2xl"></i></div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">SAST / DAST / DevSecOps</h3>
-                    <p class="text-gray-600 mb-4">Настройка и автоматизация статических и динамических анализаторов, Container Security.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag">SonarQube</span>
-                        <span class="tag">OWASP ZAP</span>
-                        <span class="tag">Semgrep</span>
-                        <span class="tag">Trivy</span>
-                        <span class="tag">Snyk</span>
-                    </div>
-                </div>
-                <!-- Offensive Testing -->
-                <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 animate-fadeIn" style="animation-delay:0.3s;">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6"><i class="fas fa-bug text-purple-500 text-2xl"></i></div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-3">Pentesting & Threat Modeling</h3>
-                    <p class="text-gray-600 mb-4">Поиск уязвимостей, составление моделей угроз и эксплуатационных сценариев.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag">Burp Suite</span>
-                        <span class="tag">Metasploit</span>
-                        <span class="tag">STRIDE</span>
-                        <span class="tag">OWASP SAMM</span>
-                    </div>
-                </div>
-            </div>
-            <!-- График владения
-            <div class="mt-16 bg-white p-8 rounded-lg shadow-sm animate-fadeIn" style="animation-delay:0.4s;">
-                <h3 class="text-xl font-semibold text-gray-800 mb-6">Уровень владения технологиями</h3>
-                <div class="space-y-6">
-                    <div class="skill">Java<span>90%</span></div>
-                    <div class="skill">Python<span>85%</span></div>
-                    <div class="skill">TypeScript / JavaScript<span>80%</span></div>
-                    <div class="skill">C/C++<span>70%</span></div>
-                </div> -->
-            <!--График навыков-->
-            <div class="mt-16 bg-white p-8 rounded-lg shadow-sm animate-fadeIn" style="animation-delay: 0.4s;">
-                <h3 class="text-xl font-semibold text-gray-800 mb-6">Владение технологиями</h3>
-                <div class="space-y-6">
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span class="text-gray-700">Python</span>
-                            <span class="text-gray-500">90%</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2.5">
-                            <div class="bg-blue-500 h-2.5 rounded-full" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span class="text-gray-700">Java</span>
-                            <span class="text-gray-500">85%</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2.5">
-                            <div class="bg-blue-500 h-2.5 rounded-full" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span class="text-gray-700">C/C++</span>
-                            <span class="text-gray-500">80%</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2.5">
-                            <div class="bg-blue-500 h-2.5 rounded-full" style="width: 80%"></div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <div class="flex justify-between mb-1">
-                            <span class="text-gray-700">JavaScript/TypeScript</span>
-                            <span class="text-gray-500">75%</span>
-                        </div>
-                        <div class="w-full bg-gray-200 rounded-full h-2.5">
-                            <div class="bg-blue-500 h-2.5 rounded-full" style="width: 75%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <button id="menu-btn" class="md:hidden text-gray-700 dark:text-gray-200"><i class="fas fa-bars text-xl"></i></button>
+    </div>
+  </div>
+  <!-- mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a href="#accueil"     class="block px-3 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">Main</a>
+      <a href="#projets"     class="block px-3 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">Projects</a>
+      <a href="#competences" class="block px-3 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">Skills</a>
+      <a href="#a-propos"    class="block px-3 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">About&nbsp;me</a>
+      <a href="#contact"     class="block px-3 py-2 bg-blue-500 text-white rounded-md">Contacts</a>
+      <div class="flex items-center space-x-4 px-3 pt-4">
+        <a href="ru_index.html" class="px-3 py-1 text-sm border rounded-md text-gray-700 dark:text-gray-200">RU</a>
+        <button id="theme-toggle-mobile" class="text-gray-700 dark:text-gray-200"><i class="fas fa-moon"></i></button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="accueil" class="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-10 md:mb-0 animate-fadeIn">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-gray-100 mb-4">Hi, I'm <span class="text-blue-500">Gorky Kirill</span></h1>
+        <h2 class="text-2xl md:text-3xl font-semibold text-gray-600 dark:text-gray-300 mb-6">Application Security Engineer</h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-8 text-lg">I help teams implement SDLC practices, conduct code audits, and automate application security.</p>
+        <div class="flex space-x-4">
+          <a href="#projets" class="contact-btn bg-blue-500 text-white px-6 py-3 rounded-md">View projects</a>
+          <a href="#contact" class="contact-btn border border-blue-500 text-blue-500 px-6 py-3 rounded-md">Contact with me</a>
         </div>
-    </section>
+      </div>
+      <div class="md:w-1/2 flex justify-center animate-fadeIn" style="animation-delay:.3s">
+        <div class="relative">
+          <div class="w-64 h-64 md:w-80 md:h-80 bg-blue-500 rounded-full opacity-10 absolute -top-6 -left-6"></div>
+          <div class="w-64 h-64 md:w-80 md:h-80 bg-indigo-500 rounded-full opacity-10 absolute -bottom-6 -right-6"></div>
+          <img src="test.jpg" alt="Фото профиля" class="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-white shadow-xl">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projets" class="py-16 bg-white dark:bg-gray-800">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-gray-700 dark:text-gray-100 mb-4">My latest projects</h2>
+      <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Discover a selection of my most striking works that combine design and functionality.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- card template repeated -->
+      <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md dark:shadow-none animate-fadeIn" style="animation-delay:.1s">
+        <div class="h-48 bg-gradient-to-r from-blue-400 to-indigo-500 flex items-center justify-center"><i class="fas fa-laptop-code text-white text-6xl"></i></div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-100 mb-2">Application 1</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Application Description 1</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span>
+          </div>
+          <a href="#" class="text-blue-500 font-medium hover:text-blue-700">View project →</a>
+        </div>
+      </div>
+      <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md dark:shadow-none animate-fadeIn" style="animation-delay:.2s">
+        <div class="h-48 bg-gradient-to-r from-purple-400 to-pink-500 flex items-center justify-center"><i class="fas fa-mobile-alt text-white text-6xl"></i></div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-100 mb-2">Application 2</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Application Description 2</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">API REST</span>
+          </div>
+          <a href="#" class="text-blue-500 font-medium hover:text-blue-700">View project →</a>
+        </div>
+      </div>
+      <div class="project-card bg-white dark:bg-gray-700 rounded-lg overflow-hidden shadow-md dark:shadow-none animate-fadeIn" style="animation-delay:.3s">
+        <div class="h-48 bg-gradient-to-r from-green-400 to-teal-500 flex items-center justify-center"><i class="fas fa-chart-line text-white text-6xl"></i></div>
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-100 mb-2">Application 3</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Application Description 3</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="tag">Vue.js</span><span class="tag">D3.js</span><span class="tag">Python</span>
+          </div>
+          <a href="#" class="text-blue-500 font-medium hover:text-blue-700">View project →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-12 animate-fadeIn" style="animation-delay:.4s">
+      <a href="https://github.com/ToxicSnail?tab=repositories" class="inline-block contact-btn bg-gray-800 dark:bg-gray-700 text-white px-6 py-3 rounded-md hover:bg-gray-700 dark:hover:bg-gray-600">View some projects <i class="fas fa-arrow-right ml-2"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="competences" class="py-16 bg-gray-50 dark:bg-gray-900">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">Skills</h2>
+      <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">A diverse set of technical and creative skills to suit all your digital needs.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- card 1 -->
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm dark:shadow-none hover:shadow-md transition-shadow duration-300 animate-fadeIn" style="animation-delay:.1s">
+        <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mb-6"><i class="fas fa-lock text-blue-500"></i></div>
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">Secure development</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Integrate security practices at every stage of development, Code Review, implementation of OWASP ASVS standards.</p>
+        <div class="flex flex-wrap gap-2"><span class="tag">Java</span><span class="tag">Python</span><span class="tag">C/C++</span><span class="tag">React</span><span class="tag">OWASP ASVS</span><span class="tag">OWASP Top 10</span></div>
+      </div>
+      <!-- card 2 -->
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm dark:shadow-none hover:shadow-md transition-shadow duration-300 animate-fadeIn" style="animation-delay:.2s">
+        <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center mb-6"><i class="fas fa-tools text-indigo-500"></i></div>
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">DevSecOps & Automation</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Configuring SAST/DAST, Container Security and Dependency Scanning in CI/CDs.</p>
+        <div class="flex flex-wrap gap-2"><span class="tag">Semgrep</span><span class="tag">CodeQL</span><span class="tag">Snyk</span><span class="tag">Docker</span><span class="tag">k8s</span></div>
+      </div>
+      <!-- card 3 -->
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm dark:shadow-none hover:shadow-md transition-shadow duration-300 animate-fadeIn" style="animation-delay:.3s">
+        <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mb-6"><i class="fas fa-bug text-purple-500"></i></div>
+        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-3">Pentesting & Threat modeling</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Pentesting and etc.</p>
+        <div class="flex flex-wrap gap-2"><span class="tag">Burp Suite</span><span class="tag">OWASP ZAP</span><span class="tag">Kali Linux</span><span class="tag">Metasploit</span><span class="tag">CTF</span></div>
+      </div>
+    </div>
+
+    <!-- skill bars -->
+    <div class="mt-16 bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm dark:shadow-none animate-fadeIn" style="animation-delay:.4s">
+      <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6">Technology stack</h3>
+      <div class="space-y-6">
+        <!-- each skill -->
+        <div>
+          <div class="flex justify-between mb-1"><span class="text-gray-700 dark:text-gray-200">Python</span><span class="text-gray-500">85%</span></div>
+          <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2.5"><div class="bg-blue-500 h-2.5 rounded-full" style="width:90%"></div></div>
+        </div>
+        <div>
+          <div class="flex justify-between mb-1"><span class="text-gray-700 dark:text-gray-200">Java</span><span class="text-gray-500">80%</span></div>
+          <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2.5"><div class="bg-blue-500 h-2.5 rounded-full" style="width:85%"></div></div>
+        </div>
+        <div>
+          <div class="flex justify-between mb-1"><span class="text-gray-700 dark:text-gray-200">Security scanners</span><span class="text-gray-500">80%</span></div>
+          <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2.5"><div class="bg-blue-500 h-2.5 rounded-full" style="width:80%"></div></div>
+        </div>
+        <div>
+          <div class="flex justify-between mb-1"><span class="text-gray-700 dark:text-gray-200">CTF/Pentesting</span><span class="text-gray-500">60%</span></div>
+          <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2.5"><div class="bg-blue-500 h-2.5 rounded-full" style="width:75%"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="a-propos" class="py-16 bg-white dark:bg-gray-800">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 mb-10 md:mb-0 animate-fadeIn">
+        <h2 class="text-3xl font-bold text-gray-700 dark:text-gray-100 mb-6">About me</h2>
+        <p class="text-gray-600 dark:text-gray-300 mb-6">I have been fascinated with technology since childhood and have turned that passion into a fulfilling career in ethical hacking</p>
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start"><div class="flex-shrink-0 mt-1"><div class="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center"><i class="fas fa-check text-blue-500"></i></div></div><div class="ml-3"><p class="text-gray-700 dark:text-gray-200">More than 4 years of experience in IS</p></div></div>
+          <div class="flex items-start"><div class="flex-shrink-0 mt-1"><div class="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center"><i class="fas fa-times text-blue-500"></i></div></div><div class="ml-3"><p class="text-gray-700 dark:text-gray-200">Diploma in Computer Security, Tomsk State University</p></div></div>
+          <div class="flex items-start"><div class="flex-shrink-0 mt-1"><div class="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center"><i class="fas fa-check text-blue-500"></i></div></div><div class="ml-3"><p class="text-gray-700 dark:text-gray-200">Over 1,000 accepted calls in a corporate environment</p></div></div>
+        </div>
+        <a href="#" class="contact-btn inline-flex items-center bg-blue-500 text-white px-6 py-3 rounded-md"><i class="fas fa-download mr-2"></i> Download my CV</a>
+      </div>
+      <div class="md:w-1/2 md:pl-12 animate-fadeIn" style="animation-delay:.3s">
+        <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-lg">
+          <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-100 mb-6">My career path</h3>
+          <div class="space-y-8">
+            <div class="flex"><div class="flex-shrink-0 mr-4"><div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center"><i class="fas fa-briefcase text-purple-500"></i></div></div><div><h4 class="font-medium text-gray-800 dark:text-gray-100">Secure Development Specialist</h4><p class="text-sm text-gray-400">CFT • winter 2025</p><p class="text-gray-600 dark:text-gray-300">First professional experience.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="py-16 bg-gray-50 dark:bg-gray-900">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16"><h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">Contact me</h2><p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Have an idea for a project or want to discuss the possibility of co-operation?</p><p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">I'd be interested in chatting with you.</p></div>
+    <div class="flex flex-col md:flex-row">
+      <!-- info -->
+      <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8 animate-fadeIn"><div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm dark:shadow-none"><h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6">Contact information</h3>
+        <div class="space-y-6">
+          <div class="flex items-start"><div class="flex-shrink-0 mt-1"><div class="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center"><i class="fas fa-envelope text-blue-500"></i></div></div><div class="ml-4"><h4 class="text-sm font-medium text-gray-500 dark:text-gray-400">Email</h4><p class="text-gray-700 dark:text-gray-200">gorkykirill@mail.ru</p></div></div>
+          <div class="flex items-start"><div class="flex-shrink-0 mt-1"><div class="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center"><i class="fas fa-phone-alt text-blue-500"></i></div></div><div class="ml-4"><h4 class="text-sm font-medium text-gray-500 dark:text-gray-400">Phone</h4><p class="text-gray-700 dark:text-gray-200">+7 9** *** ** **</p></div></div>
+          <div class="flex items-start"><div class="flex-shrink-0 mt-1"><div class="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center"><i class="fas fa-map-marker-alt text-blue-500"></i></div></div><div class="ml-4"><h4 class="text-sm font-medium text-gray-500 dark:text-gray-400">Address</h4><p class="text-gray-700 dark:text-gray-200">Tomsk, Russia</p></div></div>
+        </div>
+        <div class="mt-8"><h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6">Social media</h3><div class="flex space-x-4"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-blue-500 hover:bg-blue-500 hover:text-white transition-colors duration-300"><i class="fab fa-linkedin-in"></i></a><a href="https://github.com/ToxicSnail" class="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-blue-500 hover:bg-blue-500 hover:text-white transition-colors duration-300"><i class="fab fa-github"></i></a><a href="https://t.me/forever_stan" class="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center text-blue-500 hover:bg-blue-500 hover:text-white transition-colors duration-300"><i class="fab fa-telegram"></i></a></div></div></div></div>
+      <!-- form -->
+      <div class="md:w-1/2 animate-fadeIn" style="animation-delay:.3s"><div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm dark:shadow-none"><h3 class="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-6">Write to me!</h3>
+        <form class="space-y-6">
+          <div><label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label><input id="name" type="text" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100" placeholder="John Nixon"></div>
+          <div><label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label><input id="email" type="email" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100" placeholder="somebody@mail.ru"></div>
+          <div><label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Topic</label><input id="subject" type="text" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100" placeholder="I'd like to propose a theme"></div>
+          <div><label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label><textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-gray-700 text-gray-800 dark:text-gray-100" placeholder="Message"></textarea></div>
+          <button type="submit" class="contact-btn w-full bg-blue-500 text-white px-6 py-3 rounded-md hover:bg-blue-600">Send a message <i class="fas fa-paper-plane ml-2"></i></button>
+        </form></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-gray-800 text-white py-8">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-4 md:mb-0"><a href="#" class="text-xl font-bold">Portfolio</a><p class="text-gray-400 mt-2">© 2025 My Portfolio. All rights reserved.</p></div>
+      <div class="flex space-x-6"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-linkedin-in"></i></a><a href="https://github.com/ToxicSnail?tab=repositories" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-github"></i></a><a href="https://t.me/forever_stan" class="text-gray-400 hover:text-white transition-colors duration-300"><i class="fab fa-telegram"></i></a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+  const togglers = ['theme-toggle', 'theme-toggle-mobile']
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+
+  const preferOS = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  let dark = localStorage.getItem('theme')
+           ? localStorage.getItem('theme') === 'dark'
+           : preferOS;
+
+  function apply(d) {
+    document.documentElement.classList.toggle('dark', d);
+    togglers.forEach(btn => {
+      const icon = btn.querySelector('i');
+      icon?.classList.toggle('fa-sun',  d);
+      icon?.classList.toggle('fa-moon', !d);
+    });
+  }
+  apply(dark);
+
+  togglers.forEach(btn =>
+    btn.addEventListener('click', () => {
+      dark = !dark;
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+      apply(dark);
+    })
+  );
+</script>
+</body>
+</html>
